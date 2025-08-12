@@ -17,6 +17,10 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const deleteMood = (id) => {
+    setMoods(moods.filter((mood) => mood.id !== id));
+  };
+
   useEffect(() => {
     console.log('Moods updated:', moods);
   }, [moods]);
@@ -35,6 +39,7 @@ function App() {
             mood={mood.mood}
             emoji={mood.emoji}
             timestamp={mood.timestamp}
+            onDelete={() => deleteMood(mood.id)}
           />
         ))}
       </div>
