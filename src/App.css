@@ -1,38 +1,63 @@
-.App {
+.app-container {
   text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container.light {
+  background-color: #f9f9f9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container.dark {
+  background-color: #333;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mood-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.mood {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mood.happy {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+.mood.sad {
+  background-color: #d1ecf1;
+  border-color: #17a2b8;
+}
+
+.mood.excited {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
